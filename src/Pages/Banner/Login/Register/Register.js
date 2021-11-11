@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import useAuth from '../../../../Context/AuthProvider/useAuth'
 
 
 const Register = () => {
     const [loginData, setLoginData] = useState({})
+    const history = useHistory()
 
     const { user, registerUser, isLoading, authError } = useAuth();
 
-   const handleOnChange = e=>{
+   const handleOnBlur = e=>{
  const field = e.target.name;
  const value = e.target.value;
  const newLoginData = {...loginData};
  newLoginData[field] = value;
-//  console.log(field, value, newLoginData)
+ console.log(newLoginData)
  setLoginData(newLoginData);
    }
 
@@ -22,16 +23,17 @@ const Register = () => {
             alert('Your pasword did not match');
             return
         }
-        registerUser(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password,loginData.name, history)
         e.preventDefault()
     }
     return (
         <div>
               <h2 className="heading-add">Please Register</h2>
          { !isLoading && <form onSubmit={handleLoginSubmit}>
-         <input className="input-added" type="email" name="email" onChange={handleOnChange} id="" placeholder="Your Email"/><br/><br/>
-         <input className="input-added" type="password" name="password" onChange={handleOnChange} id="" placeholder="Your Password"/><br/><br/>
-         <input className="input-added" type="password" name="password2" onChange={handleOnChange} id="" placeholder="Retype Your Password"/><br/><br/>
+         <input className="input-added" name="name" onBlur={handleOnBlur} id="" placeholder="Your Name"/><br/><br/>
+         <input className="input-added" type="email" name="email" onBlur={handleOnBlur} id="" placeholder="Your Email"/><br/><br/>
+         <input className="input-added" type="password" name="password" onBlur={handleOnBlur} id="" placeholder="Your Password"/><br/><br/>
+         <input className="input-added" type="password" name="password2" onBlur={handleOnBlur} id="" placeholder="Retype Your Password"/><br/><br/>
          <button className="btn-color">Register</button><br/><br/>
          <Link to="/login"><h6 className="btn-add">ALREADY REGISTERED? PLEASE LOGIN</h6></Link>
          </form>}

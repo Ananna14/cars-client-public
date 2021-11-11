@@ -1,6 +1,6 @@
 import initializeFirebase from "../Pages/Banner/Login/Firebase/Firebase.init";
 import React, { useEffect, useState } from 'react'
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, updateProfile, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
 initializeFirebase()
 const UseFirebase = () =>{
@@ -10,11 +10,14 @@ const UseFirebase = () =>{
 
     const auth = getAuth();
 
-    const registerUser = (email, password) =>{
+    const registerUser = (email, password, name, history) =>{
       setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           setAuthError(''); 
+          const newUser = {email, displayName: name};
+          setUser(newUser)
+          history.replace('/');
           })
           .catch((error) => {
             setAuthError(error.message);
