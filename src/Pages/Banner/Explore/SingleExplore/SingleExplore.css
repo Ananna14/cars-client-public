@@ -1,0 +1,14 @@
+.half-width{
+    background-color: white;
+    /* border: 1px solid gray; */
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.342);
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+.img-added{
+    width: 100%;
+} 
+.btn-color{
+   background-color: honeydew;
+  width: 100px;
+}
