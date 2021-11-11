@@ -4,6 +4,7 @@ import './SingleHome.css'
 
 const SingleHome = ({product}) => {
     const {img, name, price, description} = product;
+    
     return (
         <div className="half-width">
            <img className="img-added" src={img} alt="" />
