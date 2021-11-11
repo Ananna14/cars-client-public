@@ -37,7 +37,7 @@ const history = useHistory();
          <span class="visually-hidden">Loading...</span></div>}
          {/* alert */}
           {user?.email &&<div class="alert alert-success" role="alert">
-          User created successfully!
+          login successfully!
           </div>}
           {authError && <div class="alert alert-danger" role="alert">
           {authError}
