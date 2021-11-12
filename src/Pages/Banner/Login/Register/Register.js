@@ -28,7 +28,7 @@ const Register = () => {
     }
     return (
         <div>
-              <h2 className="heading-add">Please Register</h2>
+         <h2 className="heading-add">Please Register</h2>
          { !isLoading && <form onSubmit={handleLoginSubmit}>
          <input className="input-added" name="name" onBlur={handleOnBlur} id="" placeholder="Your Name"/><br/><br/>
          <input className="input-added" type="email" name="email" onBlur={handleOnBlur} id="" placeholder="Your Email"/><br/><br/>

@@ -14,7 +14,7 @@ const AddService = () => {
         reset();
       }
     })
-  };
+   };
     return (
         <div className="review-addeed">
             <h2>Please Add a Service</h2>
