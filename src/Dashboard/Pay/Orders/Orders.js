@@ -9,7 +9,7 @@ const Orders = () => {
     const [control] = useState(false)
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myOrder/${user?.email}`)
+        fetch(`https://limitless-reef-15821.herokuapp.com/myOrder/${user?.email}`)
         .then(res => res.json())
         .then(data => setProducts(data))
     },[user?.email, control])

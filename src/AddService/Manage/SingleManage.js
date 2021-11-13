@@ -7,7 +7,7 @@ const SingleManage = ({product}) => {
 
 
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/deleteOrder/${id}`,{
+        fetch(`https://limitless-reef-15821.herokuapp.com/deleteOrder/${id}`,{
             method: "DELETE",
         },[control])
         .then((res) => res.json())

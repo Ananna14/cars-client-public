@@ -13,7 +13,7 @@ const Purchase = () => {
     const {user} = UseFirebase()
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/singleProduct/${servicesId}`)
+        fetch(`https://limitless-reef-15821.herokuapp.com/singleProduct/${servicesId}`)
         .then(res => res.json())
         .then(data => setBookings(data))
     },[])
@@ -22,7 +22,7 @@ const Purchase = () => {
     const onSubmit = data => {
         data.email = user.email;
       data.status = "panding"
-        fetch('http://localhost:5000/addOrders',{
+        fetch('https://limitless-reef-15821.herokuapp.com/addOrders',{
             method: 'POST',
             headers: {
               'content-type':'application/json'
@@ -40,7 +40,7 @@ const Purchase = () => {
         <div className="product">
             {/* single-product */}
             <div className="single-product">
-            <h2>Purchase Page</h2>
+            <h2>Purchase</h2>
             <img className="img" src={bookings?.img} alt="" />
             <h1>{bookings?.price}</h1>
            <h2>{bookings?.name}</h2>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './SingleHome.css'
 
 const SingleHome = ({product}) => {
-    const {img, name, price, description} = product;
+    const {img, name, price, description, _id} = product;
     
     return (
         <div className="half-width">
@@ -11,7 +11,7 @@ const SingleHome = ({product}) => {
            <h1>{price}</h1>
            <h2>{name}</h2>
            <p>{description}</p>
-           <Link to="/purchase"><button className="btn-color">Buy Now</button></Link>
+           <Link to={`/purchase/${_id}`}><button className="btn-color">Buy Now</button></Link>
         </div>
     )
 }

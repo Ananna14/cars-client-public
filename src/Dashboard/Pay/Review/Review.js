@@ -8,7 +8,7 @@ const Review = () => {
     const {user} = UseFirebase()
 
   const onSubmit = data => {
-    fetch('http://localhost:5000/addSReview',{
+    fetch('https://limitless-reef-15821.herokuapp.com/addSReview',{
         method: 'POST',
         headers: {
           'content-type':'application/json'

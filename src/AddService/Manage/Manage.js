@@ -7,7 +7,7 @@ const Manage = () => {
     const [control] = useState(false)
 
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://limitless-reef-15821.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[control])

@@ -7,14 +7,14 @@
 //     // const [services, setService] = useState([]);
 
 //     useEffect(()=>{
-//         fetch(`http://localhost:5000/myOrder/${user?.email}`)
+//         fetch(`https://limitless-reef-15821.herokuapp.com/myOrder/${user?.email}`)
 //         .then(res => res.json())
 //         .then(data => console.log(data))
 //     },[user?.email])
 
 // //    const loadData = (data) =>{
 // //     //    data.email = email
-// //     fetch('http://localhost:5000/confirmOrder',{
+// //     fetch('https://limitless-reef-15821.herokuapp.com/confirmOrder',{
 // //         method: 'POST',
 // //         headers: {
 // //           'content-type':'application/json'
