@@ -12,7 +12,7 @@ const Header = () => {
         <div className="design-added">
             <Link className="design" to="/home">Home</Link>
             <Link className="design" to="/explore">Explore</Link>
-            <Link className="design" to="/purchase">Purchase</Link>
+            {/* <Link className="design" to="/purchase">Purchase</Link> */}
             <Link className="design" to="/dashboard">Dashboard</Link>
             {
                 user?.email ? 
