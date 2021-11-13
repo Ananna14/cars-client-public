@@ -21,7 +21,7 @@ const Purchase = () => {
 
     const onSubmit = data => {
         data.email = user.email;
-      
+      data.status = "panding"
         fetch('http://localhost:5000/addOrders',{
             method: 'POST',
             headers: {

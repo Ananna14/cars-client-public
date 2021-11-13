@@ -6,12 +6,13 @@ import SingleOrders from '../../Pay/Orders/SignleOrders'
 const Orders = () => {
     const {user} = UseFirebase();
     const [products, setProducts] = useState([])
+    const [control] = useState(false)
 
     useEffect(()=>{
         fetch(`http://localhost:5000/myOrder/${user?.email}`)
         .then(res => res.json())
         .then(data => setProducts(data))
-    },[user?.email])
+    },[user?.email, control])
   
 
     
@@ -20,7 +21,7 @@ const Orders = () => {
             <h2>Order Page</h2>
             <div className="container">
             {
-                products.slice(0,6).map(product=><SingleOrders
+                products.map(product=><SingleOrders
                     key={product.price}
                     product={product}
                     ></SingleOrders>)
