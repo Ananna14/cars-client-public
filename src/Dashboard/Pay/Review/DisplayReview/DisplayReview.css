@@ -1,0 +1,10 @@
+.show-review{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    text-align: center;
+   margin-left: 200px;
+}
+.row-gap{
+    margin: 5px;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import SingleHome from './SingleHome/SingleHome'
 import './Home.css'
+import DisplayReview from '../../../Dashboard/Pay/Review/DisplayReview/DisplayReview'
 
 const Home = () => {
    const [products, setProducts] = useState([])
@@ -11,6 +12,7 @@ const Home = () => {
        .then(data => setProducts(data))
    },[])
     return (
+       <>
         <div className="container">
             {
                 products.slice(0,6).map(product=><SingleHome 
@@ -19,6 +21,8 @@ const Home = () => {
                     ></SingleHome>)
             }
         </div>
+        <DisplayReview></DisplayReview>
+       </>
     )
 }
 
